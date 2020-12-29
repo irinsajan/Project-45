@@ -110,31 +110,35 @@ function draw(){
        
     apple.display();
 
-    if(frameCount%60===0){
-        donut.push(new Donut(random(100,width-800),0,100));
+   if(frameCount%60===0){
+        var rand = Math.round(random(1,4));
+        switch(rand){
+          case 1: donut.push(new Donut(random(100,width-800),0,100));
+          break;
+          case 2: pizza.push(new Pizza(random(100,width-800),0,100));
+          break;
+          case 3: hotDog.push(new HotDog(random(100,width-800),0,100));
+          break;
+          default: break;
+        }
+        
     }
     for(var k=0;k<donut.length;k++){
       donut[k].display();
-;    }
-
-    if(frameCount%200===0){
-      pizza.push(new Pizza(random(100,width-800),0,100));
     }
+
+    
     for(var k=0;k<pizza.length;k++){
      pizza[k].display();
-    ;    }
-
-   }
+    } 
   
 
-   if(frameCount%340===0){
-   hotDog.push(new HotDog(random(100,width-800),0,100));
-}
-for(var k=0;k<hotDog.length;k++){
-  hotDog[k].display();
-;    }
-
-
+   
+  for(var k=0;k<hotDog.length;k++){
+    hotDog[k].display();
+  }
+ 
+  }
 
 
     
